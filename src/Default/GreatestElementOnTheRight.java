@@ -9,9 +9,10 @@ import java.util.stream.Stream;
 
 public class GreatestElementOnTheRight {
     public int[] replaceElements(int[] arr) {
-        int len = arr.length - 1;
-        if (len <= 1) {
-            return (new int[]{-1});
+        int len = arr.length;
+        if (len == 1) {
+            arr[len-1] = -1;
+            return arr;
         }
 
         int tmp_max = arr[len-1];
