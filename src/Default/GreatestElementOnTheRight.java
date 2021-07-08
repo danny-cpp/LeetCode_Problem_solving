@@ -1,30 +1,52 @@
 package Default;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class GreatestElementOnTheRight {
     public int[] replaceElements(int[] arr) {
-        if (arr.length == 1) {
-            arr[0] = -1;
-            return arr;
+        int len = arr.length - 1;
+        if (len <= 1) {
+            return (new int[]{-1});
         }
 
-        for (int i = 0; i < arr.length - 1; i++) {
-            int j = i + 1;
-            int tmp_max = arr[j];
-            for (; j < arr.length; j++) {
-                tmp_max = Math.max(tmp_max, arr[j]);
+        int tmp_max = arr[len-1];
+        int[] res = new int[len];
+
+        for (int i = arr.length-1; i > 0; i--) {
+            if (arr[i] > tmp_max) {
+                tmp_max = arr[i];
             }
-            arr[i] = tmp_max;
+            res[i-1] = tmp_max;
         }
 
-        arr[arr.length-1] = -1;
-        return arr;
+        res[len-1] = -1;
+        return res;
     }
 
     public static void main(String[] args) {
         int[] arr = {17,18,5,4,6,1};
         GreatestElementOnTheRight g = new GreatestElementOnTheRight();
         System.out.println(Arrays.toString(g.replaceElements(arr)));
+
+
+        // Queue<Integer> q = new PriorityQueue<Integer>(Collections.reverseOrder());
+        // for (int i = 1; i < arr.length; i++) {
+        //     q.add(arr[i]);
+        // }
+        //
+        // int[] res = new int[arr.length];
+        // int j = 0;
+        // while (!q.isEmpty()) {
+        //     res[j] = q.peek();
+        //     q.remove(arr[j+1]);
+        //     j++;
+        // }
+        //
+        // System.out.println(Arrays.toString(res));
     }
 }
