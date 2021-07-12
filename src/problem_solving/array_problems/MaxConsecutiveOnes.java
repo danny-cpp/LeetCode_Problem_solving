@@ -17,11 +17,14 @@ public class MaxConsecutiveOnes {
             }
         }
 
+        if (counter > res) {
+            res = counter;
+        }
         return res;
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 1, 2, 1, 1, 1, 1, 3, 1, 1, 8};
+        int[] arr = {1, 1, 1, 1, 1, 1};
         MaxConsecutiveOnes m = new MaxConsecutiveOnes();
         System.out.println(m.maxOneSequence(arr));
     }
