@@ -1,4 +1,4 @@
-package Default;
+package problem_solving.array_basics;
 
 public class EvenDigitNumber {
     private static int countDigit(int num) {

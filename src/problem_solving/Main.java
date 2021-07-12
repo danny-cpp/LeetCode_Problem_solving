@@ -1,4 +1,4 @@
-package Default;
+package problem_solving;
 
 public class Main {
 

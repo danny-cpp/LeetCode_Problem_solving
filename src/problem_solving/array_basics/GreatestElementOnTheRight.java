@@ -1,11 +1,6 @@
-package Default;
+package problem_solving.array_basics;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class GreatestElementOnTheRight {
     public int[] replaceElements(int[] arr) {

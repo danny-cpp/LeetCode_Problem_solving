@@ -1,4 +1,4 @@
-package Default;
+package problem_solving.array_basics;
 
 public class MountainArray {
     public boolean validMountainArray(int[] arr) {
