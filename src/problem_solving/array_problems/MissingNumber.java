@@ -27,7 +27,7 @@ public class MissingNumber {
                 res.add(i);
             }
         }
-        
+
         return res;
     }
 
