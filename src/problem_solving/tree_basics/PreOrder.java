@@ -21,9 +21,8 @@ public class PreOrder {
             return;
         }
 
-        TreeNode<T> tmp = node;
         Deque<TreeNode<T>> st = new ArrayDeque<>();
-        st.add(tmp);
+        st.add(node);
 
         while (!st.isEmpty()) {
             TreeNode<T> current = st.pollLast();
@@ -52,6 +51,9 @@ public class PreOrder {
 
         System.out.print("\nInOrder: ");
         InOrder.InOrderTraversal(root);
+
+        System.out.print("\nInOrderIterative: ");
+        InOrder.InOrderIterative(root);
 
         System.out.print("\nPostOrder: ");
         PostOrder.PostOrderTraversal(root);
