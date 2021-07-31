@@ -16,11 +16,39 @@ public class PreOrder {
         }
     }
 
+    public static <T> void PreOrderIterative(TreeNode<T> node) {
+        if (node == null) {
+            return;
+        }
+
+        TreeNode<T> tmp = node;
+        Deque<TreeNode<T>> st = new ArrayDeque<>();
+        st.add(tmp);
+
+        while (!st.isEmpty()) {
+            TreeNode<T> current = st.pollLast();
+            // Do ops
+            System.out.print(current.data + " ");
+            // End ops
+
+            if (current.right != null) {
+                st.add(current.right);
+            }
+            if (current.left != null) {
+                st.add(current.left);
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode<Integer> root = TreeNode.populate();
 
         System.out.print("PreOrder: ");
         PreOrderTraversal(root);
+
+        System.out.print("\nPreOrderIterative: ");
+        PreOrderIterative(root);
 
         System.out.print("\nInOrder: ");
         InOrder.InOrderTraversal(root);
@@ -28,15 +56,7 @@ public class PreOrder {
         System.out.print("\nPostOrder: ");
         PostOrder.PostOrderTraversal(root);
 
-        Queue<Integer> q = new ArrayDeque<>();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-
-        System.out.println(q.poll());
-        System.out.println(q.poll());
-        System.out.println(q.poll());
-        System.out.println(q.poll());
+        System.out.print("\nBFS: ");
+        BFS.levelOrderTraverse(root);
     }
 }
