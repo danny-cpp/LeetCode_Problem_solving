@@ -53,12 +53,15 @@ public class PreOrder {
         InOrder.InOrderTraversal(root);
 
         System.out.print("\nInOrderIterative: ");
-        InOrder.InOrderIterative(root);
+        InOrder.InOrderIterative1(root);
 
         System.out.print("\nPostOrder: ");
         PostOrder.PostOrderTraversal(root);
 
         System.out.print("\nBFS: ");
         BFS.levelOrderTraverse(root);
+
+        System.out.print("\nTree depth: ");
+        System.out.println(TreeDepth.findDepth(root));
     }
 }
